@@ -9,7 +9,6 @@ export default function Messages({
       {messages.map((message, index) => (
         <div key={index}>
           <div>text: {message.message}</div>
-          <div>from: {message.admin.name}</div>
           <div>createdAt: {message.createdAt}</div>
         </div>
       ))}

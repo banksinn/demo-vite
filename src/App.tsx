@@ -26,12 +26,15 @@ function App() {
         polling: {
           extraHeaders: {
             Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjIxNWYyODY4LTJmMTMtNGM1Mi1hNDcyLTk5ODI4NzdjYzUyNiIsInJvbGUiOiJhZG1pbiIsInR5cGUiOiJjb21tb24iLCJjbGllbnQiOiJ3YSIsImlhdCI6MTcwMDgxMjU1MCwiZXhwIjoxNzAwODk4OTUwfQ.xL6wzOOIo0ky5_cwhEFDtuBvXMW6E0EPjVUy3C9HjO4",
+              "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxNDE3YzY3LWFiZDktNDg0MC05Yzc0LTk2Njk0NTVmMGY4OCIsInJvbGUiOiJwYXRpZW50IiwidHlwZSI6ImNvbW1vbiIsImNsaWVudCI6Im1hIiwiaWF0IjoxNzAxMDcwMzIwLCJleHAiOjE3MDExNTY3MjB9.rIWxQdBoSjsZg0OcLsYf0pi5WL9CoH_6PC_LKcYdWvM",
           },
         },
       },
     };
-    const newSocket = io("http://localhost:8001", socketOptions);
+    const newSocket = io(
+      "https://dev.api.medrefill-well.dev.witsawa.com",
+      socketOptions
+    );
     setSocket(newSocket);
   }, []);
 
