@@ -11,8 +11,8 @@ function App() {
   const [messages, setMessages] = useState<
     { message: string; admin: { name: string }; createdAt: string }[]
   >([]);
-  const joinRoom = (value: string) => {
-    socket?.emit("join-room", value);
+  const joinRoom = (value: { room: string }) => {
+    socket?.emit("join-room", { room: value.room });
   };
   const watchRoom = (value: { room: string; limit: number }) => {
     socket?.emit("scroll-message", { room: value.room, limit: value.limit });
