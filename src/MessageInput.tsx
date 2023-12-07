@@ -3,9 +3,18 @@ import { useState } from "react";
 export default function MessageInput({
   send,
   room,
+  type,
+  imageId,
 }: {
-  send: (val: { room: string; message: string }) => void;
+  send: (val: {
+    room: string;
+    type: string;
+    message: string;
+    imageId?: string;
+  }) => void;
   room: string;
+  type: string;
+  imageId?: string;
 }) {
   const [value, setValue] = useState("");
   return (
@@ -17,7 +26,7 @@ export default function MessageInput({
       />
       <button
         onClick={() => {
-          send({ room: room, message: value });
+          send({ room: room, type: type, message: value, imageId: imageId });
           setValue("");
         }}
       >
